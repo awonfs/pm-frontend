@@ -1,3 +1,13 @@
+import { Box } from "@chakra-ui/react";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import { useEffect, useState } from "react";
+
 export default function App() {
-	return <div>Hey!</div>;
+	return (
+		<Box>
+			<Header />
+			<Sidebar />
+		</Box>
+	);
 }
