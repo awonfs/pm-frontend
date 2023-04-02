@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Box, Flex, Stack, UnorderedList, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 type Project = {
@@ -24,12 +24,20 @@ function Sidebar() {
 		getProjects();
 	}, []);
 	return (
-		<Box height={"100vh"} width={"10%"} p={10} bg="gray.600">
+		<Box
+			height={"100vh"}
+			p={10}
+			bg="gray.600"
+			borderRight="1px"
+			borderColor="gray.300"
+		>
 			<Flex>
 				<Stack>
 					<UnorderedList>
 						{projects.map((project) => (
-							<ListItem key={project.id}>{project.title}</ListItem>
+							<Text color="gray.200" key={project.id}>
+								{project.title}
+							</Text>
 						))}
 					</UnorderedList>
 				</Stack>

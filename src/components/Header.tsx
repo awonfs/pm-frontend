@@ -11,7 +11,7 @@ function Header() {
 			alignItems={"center"}
 			justifyContent={"center"}
 		>
-			<Box ml={300}>
+			<Box ml={190}>
 				<Heading as={"h1"} size={"lg"} color={"white"}>
 					Project manager
 				</Heading>
