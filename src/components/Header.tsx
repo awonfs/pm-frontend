@@ -1,5 +1,6 @@
 import { AddIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function Header() {
 	return (
@@ -13,7 +14,7 @@ function Header() {
 		>
 			<Box ml={190}>
 				<Heading as={"h1"} size={"lg"} color={"white"}>
-					Project manager
+					<Link to="/">Project Manager</Link>
 				</Heading>
 			</Box>
 			<Spacer />

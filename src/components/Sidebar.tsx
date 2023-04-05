@@ -1,5 +1,6 @@
 import { Box, Flex, Stack, UnorderedList, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Project = {
 	id: number;
@@ -36,7 +37,9 @@ function Sidebar() {
 					<UnorderedList>
 						{projects.map((project) => (
 							<Text color="gray.200" key={project.id}>
-								{project.title}
+								<Link key={project.id} to={`/projects/${project.id}`}>
+									{project.title}
+								</Link>
 							</Text>
 						))}
 					</UnorderedList>
