@@ -13,7 +13,6 @@ export default function Post() {
 
 	const [project, setProject] = useState<Project>({} as Project);
 
-	//TODO fetch project data based on projectId
 	async function getProject() {
 		try {
 			const response = await fetch(`http://raspberrypi:5000/post/${projectId}`);
