@@ -38,6 +38,7 @@ function Header() {
 				}),
 			});
 			console.log(response);
+			location.reload();
 			onClose();
 		} catch (error) {
 			console.log(error);
