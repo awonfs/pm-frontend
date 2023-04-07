@@ -1,15 +1,4 @@
-import { AddIcon } from "@chakra-ui/icons";
-import {
-	Box,
-	Button,
-	Flex,
-	Heading,
-	Input,
-	Text,
-	Textarea,
-	useDisclosure,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Button, Input, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import createProject from "../api/createProject";
 import {
