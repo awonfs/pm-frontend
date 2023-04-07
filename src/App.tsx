@@ -1,8 +1,8 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
-import Post from "./components/Post";
+import Post from "./pages/Post";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {

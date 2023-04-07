@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Container } from "@chakra-ui/react";
-import DeleteButton from "./DeleteButton";
+import DeleteButton from "../components/DeleteButton";
 import getProject from "../api/getProject";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
