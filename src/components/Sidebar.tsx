@@ -20,10 +20,10 @@ function Sidebar() {
 			console.log(error);
 		}
 	}
-
 	useEffect(() => {
 		getProjects();
 	}, []);
+
 	return (
 		<Box
 			height={"100vh"}

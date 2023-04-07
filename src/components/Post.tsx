@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Container } from "@chakra-ui/react";
+import DeleteButton from "./DeleteButton";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -36,8 +37,20 @@ export default function Post() {
 				p={5}
 				gap={50}
 			>
-				<Heading>{project.title}</Heading>
-				<Text>{project.content}</Text>
+				<Flex
+					alignItems="center"
+					justifyContent="center"
+					flexDirection="column"
+					gap={2}
+				>
+					<DeleteButton projectId={project.id} />
+					<Heading cursor="pointer" size="2xl" borderBottom="2px">
+						{project.title}
+					</Heading>
+				</Flex>
+				<Container textAlign="start" color="blackAlpha.900">
+					{project.content}
+				</Container>
 			</Flex>
 		</Box>
 	);
