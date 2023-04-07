@@ -1,5 +1,6 @@
 import { Button, Flex } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
+import deleteProject from "../api/deleteProject";
 
 type DeleteButtonProps = {
 	projectId: number;
@@ -7,15 +8,7 @@ type DeleteButtonProps = {
 const DeleteButton = ({ projectId }: DeleteButtonProps) => {
 	async function handleDelete() {
 		try {
-			const response = await fetch(
-				`http://raspberrypi:5000/post/${projectId}`,
-				{
-					method: "DELETE",
-				}
-			);
-			const data = await response.json();
-			console.log(data);
-			location.reload();
+			await deleteProject(projectId);
 		} catch (error) {
 			console.log(error);
 		}

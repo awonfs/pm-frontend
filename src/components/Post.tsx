@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Container } from "@chakra-ui/react";
 import DeleteButton from "./DeleteButton";
+import getProject from "../api/getProject";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -14,18 +15,12 @@ export default function Post() {
 
 	const [project, setProject] = useState<Project>({} as Project);
 
-	async function getProject() {
-		try {
-			const response = await fetch(`http://raspberrypi:5000/post/${projectId}`);
-			const data = await response.json();
-			setProject(data);
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
 	useEffect(() => {
-		getProject();
+		async function fetchProject() {
+			const data = await getProject(String(projectId));
+			setProject(data);
+		}
+		fetchProject();
 	}, [projectId]);
 
 	return (

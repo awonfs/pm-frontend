@@ -1,6 +1,7 @@
 import { Box, Flex, Stack, UnorderedList, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import getProjects from "../api/getProjects";
 
 type Project = {
 	id: number;
@@ -10,18 +11,13 @@ type Project = {
 function Sidebar() {
 	const [projects, setProjects] = useState<Project[]>([]);
 
-	async function getProjects() {
-		try {
-			const response = await fetch("http://raspberrypi:5000/posts");
-			const data = await response.json();
-			console.log(data);
-			setProjects(data);
-		} catch (error) {
-			console.log(error);
-		}
-	}
 	useEffect(() => {
-		getProjects();
+		async function fetchProjects() {
+			const data = await getProjects();
+			setProjects(data);
+		}
+
+		fetchProjects();
 	}, []);
 
 	return (
