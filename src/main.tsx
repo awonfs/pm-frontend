@@ -5,11 +5,11 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<BrowserRouter>
-		<ChakraProvider>
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
-		</ChakraProvider>
-	</BrowserRouter>
+  <BrowserRouter>
+    <ChakraProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ChakraProvider>
+  </BrowserRouter>
 );

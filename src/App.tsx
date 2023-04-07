@@ -6,16 +6,16 @@ import Post from "./pages/Post";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {
-	return (
-		<Box>
-			<Header />
-			<Flex>
-				<Sidebar />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/projects/:projectId" element={<Post />} />
-				</Routes>
-			</Flex>
-		</Box>
-	);
+  return (
+    <Box>
+      <Header />
+      <Flex>
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects/:projectId" element={<Post />} />
+        </Routes>
+      </Flex>
+    </Box>
+  );
 }
