@@ -38,7 +38,6 @@ export default function Post() {
           flexDirection="column"
           gap={2}
         >
-          <DeleteButton projectId={project.id} />
           <Heading cursor="pointer" size="2xl" borderBottom="2px">
             {project.title}
           </Heading>
@@ -46,6 +45,7 @@ export default function Post() {
         <Container textAlign="start" color="blackAlpha.900">
           {project.content}
         </Container>
+        <DeleteButton projectId={project.id} />
       </Flex>
     </Box>
   );

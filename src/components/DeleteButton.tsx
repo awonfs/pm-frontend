@@ -20,6 +20,7 @@ const DeleteButton = ({ projectId }: DeleteButtonProps) => {
       color="whiteAlpha.800"
       bg="red.500"
       size="xs"
+      mt={10}
       onClick={handleDelete}
     >
       <Flex justifyContent="center" alignItems="center" gap={1}>
