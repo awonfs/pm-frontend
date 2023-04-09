@@ -1,6 +1,3 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-
 const deleteProject = async (projectId: number) => {
   try {
     const response = await fetch(`http://raspberrypi:5000/post/${projectId}`, {

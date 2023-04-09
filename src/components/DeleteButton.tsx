@@ -1,6 +1,7 @@
 import { Button, Flex } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import deleteProject from "../api/deleteProject";
+import { Link } from "react-router-dom";
 
 type DeleteButtonProps = {
   projectId: number;
@@ -23,7 +24,7 @@ const DeleteButton = ({ projectId }: DeleteButtonProps) => {
     >
       <Flex justifyContent="center" alignItems="center" gap={1}>
         <DeleteIcon />
-        Delete
+        <Link to="/">Delete</Link>
       </Flex>
     </Button>
   );
