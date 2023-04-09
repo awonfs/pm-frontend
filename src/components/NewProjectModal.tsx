@@ -25,6 +25,8 @@ function NewProjectModal({
     try {
       await createProject(projectName, projectDescription);
       onClose();
+      setProjectName("");
+      setProjectDescription("");
     } catch (error) {
       console.log(error);
     }
