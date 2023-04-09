@@ -1,6 +1,4 @@
 import { Button, Input, Textarea } from "@chakra-ui/react";
-import { useState } from "react";
-import createProject from "../api/createProject";
 import {
   Modal,
   ModalBody,
@@ -10,6 +8,8 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
+import createProject from "../api/createProject";
+import { useState } from "react";
 
 function NewProjectModal({
   isOpen,

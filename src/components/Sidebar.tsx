@@ -1,25 +1,12 @@
 import { Box, Flex, Stack, UnorderedList, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import getProjects from "../api/getProjects";
 
 type Project = {
   id: number;
   title: string;
 };
 
-function Sidebar() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    async function fetchProjects() {
-      const data = await getProjects();
-      setProjects(data);
-    }
-
-    fetchProjects();
-  }, []);
-
+function Sidebar({ projects }: { projects: Project[] }) {
   return (
     <Box
       height={"100vh"}
@@ -31,7 +18,7 @@ function Sidebar() {
       <Flex>
         <Stack>
           <UnorderedList>
-            {projects.map((project) => (
+            {projects.map((project: Project) => (
               <Text color="gray.200" key={project.id}>
                 <Link key={project.id} to={`/projects/${project.id}`}>
                   {project.title}

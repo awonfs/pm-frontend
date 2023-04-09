@@ -10,8 +10,6 @@ async function createProject(projectName: string, projectDescription: string) {
         content: projectDescription,
       }),
     });
-    console.log(response);
-    location.reload();
   } catch (error) {
     console.log(error);
   }
