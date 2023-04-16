@@ -3,6 +3,7 @@ import DeleteButton from "../components/DeleteButton";
 import getProject from "../api/getProject";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import EditButton from "../components/EditButton";
 
 type Project = {
   id: number;
@@ -45,7 +46,10 @@ export default function Post() {
         <Container textAlign="start" color="blackAlpha.900">
           {project.content}
         </Container>
-        <DeleteButton projectId={project.id} />
+        <Flex gap={4}>
+          <EditButton />
+          <DeleteButton projectId={project.id} />
+        </Flex>
       </Flex>
     </Box>
   );
