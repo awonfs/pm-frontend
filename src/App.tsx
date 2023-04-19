@@ -22,7 +22,7 @@ export default function App() {
     }
 
     fetchProjects();
-  }, [projects]);
+  }, []);
 
   return (
     <Box>
