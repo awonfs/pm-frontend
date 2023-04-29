@@ -15,19 +15,15 @@ function Sidebar({ projects }: { projects: Project[] }) {
       borderRight="1px"
       borderColor="gray.300"
     >
-      <Flex>
-        <Stack>
-          <UnorderedList>
-            {projects.map((project: Project) => (
-              <Text color="gray.200" key={project.id}>
-                <Link key={project.id} to={`/projects/${project.id}`}>
-                  {project.title}
-                </Link>
-              </Text>
-            ))}
-          </UnorderedList>
-        </Stack>
-      </Flex>
+      <UnorderedList pr={5}>
+        {projects.map((project: Project) => (
+          <Text color="gray.200" key={project.id}>
+            <Link key={project.id} to={`/projects/${project.id}`}>
+              {project.title}
+            </Link>
+          </Text>
+        ))}
+      </UnorderedList>
     </Box>
   );
 }
