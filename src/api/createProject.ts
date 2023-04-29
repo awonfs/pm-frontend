@@ -1,6 +1,6 @@
 async function createProject(projectName: string, projectDescription: string) {
   try {
-    const response = await fetch("http://raspberrypi:5000/post", {
+    await fetch("http://raspberrypi:5000/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
