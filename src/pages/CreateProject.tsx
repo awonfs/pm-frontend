@@ -35,7 +35,7 @@ function CreateProject() {
         bg="gray.500"
         flex={1}
       >
-        <Heading mb={5}>Create a new project </Heading>
+        <Heading my={5}>Create a new project </Heading>
         <FormControl
           display="flex"
           flexDirection="column"
