@@ -45,15 +45,17 @@ function CreateProject() {
         >
           <FormLabel>Project name</FormLabel>
           <Input
+            cursor="pointer"
+            border="1px solid white"
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
-            placeholder="Project name"
           />
           <FormLabel>Project Description </FormLabel>
           <Input
+            cursor="pointer"
+            border="1px solid white"
             value={projectDescription}
             onChange={(e) => setProjectDescription(e.target.value)}
-            placeholder="Project name"
           />
           <Button
             onClick={onSubmit}

@@ -17,11 +17,14 @@ function Header() {
           <Link to="/">Project Manager</Link>
         </Heading>
       </Box>
-      <Button colorScheme="purple" variant="solid" size={"md"} mr={20}>
-        <Flex alignItems="center" justifyContent="center" gap={1}>
-          <AddIcon boxSize={4} pt={1} />
-          <Link to="/new-project">Add a new project</Link>
-        </Flex>
+      <Button
+        leftIcon={<AddIcon pt={1} />}
+        colorScheme="purple"
+        variant="solid"
+        size={"md"}
+        mr={20}
+      >
+        <Link to="/new-project">Add a new project</Link>
       </Button>
     </Flex>
   );
