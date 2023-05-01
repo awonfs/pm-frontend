@@ -7,19 +7,22 @@ import {
   Button,
 } from "@chakra-ui/react";
 import createProject from "../api/createProject";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ReloadContext } from "../components/Sidebar";
 
 function CreateProject() {
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const navigate = useNavigate();
+  const { setReload } = useContext(ReloadContext);
 
   async function onSubmit() {
     try {
       await createProject(projectName, projectDescription);
       setProjectName("");
       setProjectDescription("");
+      setReload(true); // Trigger a re-fetch in the Sidebar
       navigate("/");
     } catch (error) {
       console.log(error);

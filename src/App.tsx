@@ -5,37 +5,24 @@ import Header from "./components/Header";
 import Post from "./pages/Post";
 import CreateProject from "./pages/CreateProject";
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
-import getProjects from "./api/getProjects";
+import { ReloadContext } from "./components/Sidebar";
+import { useState } from "react";
 
 export default function App() {
-  type Project = {
-    id: number;
-    title: string;
-  };
-
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    async function fetchProjects() {
-      const data = await getProjects();
-      setProjects(data);
-    }
-
-    fetchProjects();
-  }, []);
-
+  const [reload, setReload] = useState(false);
   return (
-    <Box>
-      <Header />
-      <Flex>
-        <Sidebar projects={projects} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects/:projectId" element={<Post />} />
-          <Route path="/new-project" element={<CreateProject />} />
-        </Routes>
-      </Flex>
-    </Box>
+    <ReloadContext.Provider value={{ reload, setReload }}>
+      <Box>
+        <Header />
+        <Flex>
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects/:projectId" element={<Post />} />
+            <Route path="/new-project" element={<CreateProject />} />
+          </Routes>
+        </Flex>
+      </Box>
+    </ReloadContext.Provider>
   );
 }

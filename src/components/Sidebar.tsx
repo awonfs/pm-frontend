@@ -1,12 +1,40 @@
-import { Box, Flex, Stack, UnorderedList, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, UnorderedList, Text } from "@chakra-ui/react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import getProjects from "../api/getProjects";
 
 type Project = {
   id: number;
   title: string;
 };
 
-function Sidebar({ projects }: { projects: Project[] }) {
+type ReloadContextType = {
+  reload: boolean;
+  setReload: (value: boolean) => void;
+};
+
+export const ReloadContext = React.createContext<ReloadContextType>({
+  reload: false,
+  setReload: () => {},
+});
+
+function Sidebar() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const { reload, setReload } = useContext<ReloadContextType>(ReloadContext);
+
+  useEffect(() => {
+    async function fetchProjects() {
+      const data = await getProjects();
+      setProjects(data);
+
+      // Reset the reload state after fetching the data
+      setReload(false);
+    }
+
+    fetchProjects();
+  }, [reload, setReload]);
+
   return (
     <Box
       height={"100vh"}
